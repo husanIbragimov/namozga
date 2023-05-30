@@ -6,7 +6,7 @@ from aiogram import Bot, Dispatcher, executor, types
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from api.main import ROOT_URL
 
-API_TOKEN = '6260643124:AAHzDUFw8tNc34K4Ws48uAr6onnrmG2-2sY'
+API_TOKEN = 'SECRET_KEY'
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
