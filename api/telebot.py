@@ -16,16 +16,12 @@ bot = Bot(token=API_TOKEN)
 dp = Dispatcher(bot)
 
 
-@dp.message_handler(commands=['start', 'help'])
+@dp.message_handler(commands=['start'])
 async def send_welcome(message: types.Message):
-    """
-    This handler will be called when user sends `/start` or `/help` command
-    """
-
     # Create the inline keyboard
     keyboard = InlineKeyboardMarkup()
     # Create the buttons
-    button1 = InlineKeyboardButton(text='Namoz vaqtlari', callback_data='button1')
+    button1 = InlineKeyboardButton(text='☪ Namoz vaqtlari 🕌📿', callback_data='button1')
     # Add the buttons to the keyboard
     keyboard.add(button1)
     # Send the message with the inline keyboard
@@ -49,7 +45,7 @@ async def button1_callback(query: types.CallbackQuery):
     maghrib = ROOT_URL.json()['data'][day - 1]['timings']['Maghrib']
     hufton = ROOT_URL.json()['data'][day - 1]['timings']['Isha']
 
-    text_message = f"\n📆 {date} \n\n Hafta kuni: {weekday}  \n \n🏙 Tong: {fajr} 🕒 \n\n🌅 Bomdod: {sunrise} 🕓 \n\n🏞 Peshin: {dhuhr} 🕛 \n\n🌇 Asr: {asr} 🕟 \n\n🌆 Shom: {maghrib} 🕢 \n\n🌃 Hufton: {hufton} 🕘\n"
+    text_message = f"\n📆 {date} 🕌\n\n☪ Hafta kuni: {weekday}  \n \n🏙 Tong: {fajr} 🕒 \n\n🌅 Quyosh: {sunrise} 🕓 \n\n🏞 Peshin: {dhuhr} 🕛 \n\n🌇 Asr: {asr} 🕟 \n\n🌆 Shom: {maghrib} 🕢 \n\n🌃 Hufton: {hufton} 🕘\n"
     await query.answer("Sending...")
     await bot.send_message(chat_id=query.message.chat.id, text=text_message)
 
