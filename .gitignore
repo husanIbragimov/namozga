@@ -130,11 +130,10 @@ dmypy.json
 .pyre/
 
 staticfiles
-venv
+
 !**/__pycache__/
 *.pyc
 *.pyo
 /.idea/
 .idea/
 /.vs
-/venv/
